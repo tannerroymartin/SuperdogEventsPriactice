@@ -1,0 +1,41 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background: #a8c0ff;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #3f2b96, #a8c0ff);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #3f2b96, #a8c0ff);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+
+    color: white;
+    font-family: Verdana, Tahoma, sans-serif;
+    padding-top: 60px;
+
+
+}
+
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+
+.header {
+    background: #2c3e50;
+}
+
+.languages {
+    width: 10%;
+    height: auto;
+}

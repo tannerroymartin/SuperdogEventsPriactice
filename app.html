@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <title>Title</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!--Custom CSS for all challenges-->
+        <link rel="stylesheet" href="/css/superdog.css">
+        <!-- <link rel="stylesheet" href="/css/soaf.css">
+    <link rel="stylesheet" href="/css/sunset.css">
+    <link rel="stylesheet" href="/css/superdog.css">
+    <link rel="stylesheet" href="/css/tacocat.css">
+    <link rel="stylesheet" href="/css/mystery.css"> -->
+    </head>
+
+    <body onload="buildDropDown()">
+
+        <header>
+            <!-- Fixed navbar -->
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                <a class="navbar-brand" href="#">Name Of Challenge</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/index.html">Home</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/app.html">The App<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/code.html">See The Code</a>
+                        </li>
+                        <li class="nav-item">
+                            <!--GitHub link here-->
+                            <a class="nav-link" href="#">Get The Code</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://eloquent-poincare-c5d960.netlify.app/">My Portfolio</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <div class="container-fluid">
+            <div class="dogContainer">
+                <div class="row">
+                    <div class="col-sm-6 p-5">
+                        <div class="btn group">
+                            <button type="button" class="btn btn-secondary">Pick a Location</button>
+                            <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span
+                                    class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <div id="eventDropDown" class="dropdown-menu">
+                                <!--Template for dropdown-->
+                            </div>
+                        </div>
+                        <table class="table table-striped">
+                            <tr>
+                                <th colspan="2" id="statsHeader">Stats For All Events</th>
+                            </tr>
+                            <tr>
+                                <td>Total Attendance</td>
+                                <td id="total">100</td>
+                            </tr>
+                            <tr>
+                                <td>Average Attendance</td>
+                                <td id="average">100</td>
+                            </tr>
+                            <tr>
+                                <td>Most Attended</td>
+                                <td id="most">100</td>
+                            </tr>
+                            <tr>
+                                <td>Least Attended</td>
+                                <td id="least">100</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-sm-6">
+                        <img src="/img/Super-dog1.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+        <!--bottom table-->
+        <div class="row">
+            <div class="col-8 p-5">
+                <table class="table table-striped" id="bottomTable">
+                    <button class="btn btn-secondary" type="button" data-target="#addEventModal" data-toggle="modal">
+                        Add data
+                    </button>
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Event Name</th>
+                            <th>City</th>
+                            <th>State</th>
+                            <th>Attendence</th>
+                            <th>Event Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultsBody">
+                        <!--data goes here-->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+        <!--Modals-->
+
+        <!-- Modal -->
+        <div class="modal" id="addEventModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add a New Event</h5>
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="newEntry">
+                            <div class="form-group">
+                                <label for="newEventName">Event Name</label>
+                                <input type="text" class="form-control" id="newEventName" placeholder="Event Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="newCity">City</label>
+                                <input type="text" class="form-control" id="newCity" placeholder="City">
+                            </div>
+                            <div class="form-group">
+                                <label for="newState">State</label>
+                                <input type="text" class="form-control" id="newState" placeholder="State">
+                            </div>
+                            <div class="form-group">
+                                <label for="newAttendence">Attendence</label>
+                                <input type="text" class="form-control" id="newAttandance" placeholder="Attendance">
+                            </div>
+                            <div class="form-group">
+                                <label for="newEventDate">Event Date</label>
+                                <input type="text" class="form-control" id="newEventDate" placeholder="Event Date">
+                            </div>
+
+                    </div>
+
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn" onclick="saveAdd()" data-dismiss="modal">Add
+                            Event</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <footer class="footer mt-auto">
+            <div class="container">
+                <span>&copy; Tanner Roy Martin 2021</span>
+            </div>
+        </footer>
+
+        <template id="dataTemplate">
+            <tr>
+                <td id="eventName"></td>
+                <td id="city"></td>
+                <td id="state"></td>
+                <td id="attendance"></td>
+                <td id="eventDate"></td>
+            </tr>
+        </template>
+
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+        </script>
+        <!--Sweet Alert CDN-->
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+        <script src="/js/site.js"></script>
+    </body>
+
+</html>
