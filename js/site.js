@@ -160,7 +160,7 @@ function saveAdd() {
     //grab events out of local storage
     let bottomTable = JSON.parse(sessionStorage.getItem("eventArray")) || eventArray;
 
-    let obj = {};
+    let obj = {}; 
     obj["event"] = document.getElementById("newEventName").value;
     obj["city"] = document.getElementById("newCity").value;
     obj["state"] = document.getElementById("newState").value;
